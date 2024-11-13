@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 export default function Waitlist() {
+  
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -15,7 +16,7 @@ export default function Waitlist() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-        },
+        }, 
         body: JSON.stringify({ email }),
       });
 
@@ -32,6 +33,7 @@ export default function Waitlist() {
       setMessage('Failed to join the waitlist. Please try again.');
     }
   };
+
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '2rem' }}>
