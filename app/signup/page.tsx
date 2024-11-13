@@ -14,16 +14,13 @@ export default function Waitlist() {
     try {
       const response = await fetch('/api/email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        }, 
         body: JSON.stringify({ email }),
       });
 
       const {data} = await response.json();
 
       if (response.ok) {
-        setMessage(data.message || 'You have successfully joined the waitlist!');
+        setMessage('You have successfully joined the waitlist!');
         setEmail(''); // Clear the input
       } else {
         setMessage(data.error || 'Something went wrong. Please try again.');
